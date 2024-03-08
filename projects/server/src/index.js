@@ -24,14 +24,12 @@ app.use(express.static("../src/public"));
 // ===========================
 // NOTE : Add your routes here
 
-// const { authRouter, transactionRouter, productRouter, categoryRouter, reportRouter, accountRouter } = require('./routers');
+const { adminRouters, ajaranRouters, kelasRouter, studentRouters } = require('./routers');
 
-// app.use('/api/auth', authRouter);
-// app.use('/api/accounts', accountRouter);
-// app.use('/api/transactions', transactionRouter);
-// app.use("/api/products",productRouter);
-// app.use("/api/categories",categoryRouter);
-// app.use('/api/report', reportRouter);
+app.use('/api/auth', adminRouters);
+app.use('/api/ajaran', ajaranRouters);
+app.use('/api/kelas', kelasRouter);
+app.use("/api/student",studentRouters);
 
 app.get("/api", (req, res) => {
   res.send(`Hello, this is my API`);
@@ -81,7 +79,7 @@ app.listen(PORT, (err) => {
   if (err) {
     console.log(`ERROR: ${err}`);
   } else {
-    // db.sequelize.sync({ alter: true });
+    db.sequelize.sync({ alter: true });
     console.log(`APP RUNNING at ${PORT} ✅`);
   }
 });

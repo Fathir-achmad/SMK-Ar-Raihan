@@ -1,15 +1,13 @@
-const transactionRouter = require('./transactionRouter');
-const productRouter = require('./productRouter');
-const categoryRouter = require('./categoryRouter')
-const authRouter = require('./authRouter')
-const accountRouter = require('./accountRouter')
-const reportRouter = require('./reportRouter')
+const adminRouters = require('./adminRouters')
+const ajaranRouters = require('./ajaranRouters')
+const kelasRouters = require('./kelasRouters')
+const studentRouters = require('./studentRouters')
+
+
 
 module.exports = {
-    transactionRouter,
-    productRouter,
-    categoryRouter,
-    authRouter,
-    reportRouter,
-    accountRouter
+    adminRouters,
+    ajaranRouters,
+    kelasRouters,
+    studentRouters,
 }

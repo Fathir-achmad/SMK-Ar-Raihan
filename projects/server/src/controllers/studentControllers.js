@@ -45,7 +45,7 @@ module.exports = {
             res.status(400).send(err);
         }
     },
-    updateKelas: async (req, res) => {
+    updateSiswa: async (req, res) => {
         try {
             const { id } = req.params
             const { nama_siswa, nis, kelamin, agama, kelas, alamat, phone, imgProfile, keterangan } = req.body;
@@ -68,7 +68,7 @@ module.exports = {
             res.status(400).send(err);
         }
     },
-    disableKelas : async(req, res) => {
+    disableSiswa : async(req, res) => {
         try {
             const { id } = req.params
             await siswa.update({
