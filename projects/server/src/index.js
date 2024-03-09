@@ -24,12 +24,16 @@ app.use(express.static("../src/public"));
 // ===========================
 // NOTE : Add your routes here
 
-const { adminRouters, ajaranRouters, kelasRouter, studentRouters } = require('./routers');
+const { adminRouters, ajaranRouters, kelasRouters, studentRouters, posBayarRouters, jurnalUmumRouters } = require('./routers');
 
 app.use('/api/auth', adminRouters);
 app.use('/api/ajaran', ajaranRouters);
-app.use('/api/kelas', kelasRouter);
+app.use('/api/kelas', kelasRouters);
 app.use("/api/student",studentRouters);
+app.use('/api/posbayar', posBayarRouters);
+app.use('/api/jurnalumum', jurnalUmumRouters);
+
+
 
 app.get("/api", (req, res) => {
   res.send(`Hello, this is my API`);
