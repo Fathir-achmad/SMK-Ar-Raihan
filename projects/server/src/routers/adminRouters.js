@@ -5,7 +5,7 @@ const { verifyToken } = require('../middleware/auth');
 const router = require('express').Router();
 
 router.post('/', verifyToken, adminControllers.register);
-router.post('/login', checkUsername, checkPassword, adminControllers.login);
+router.post('/login', adminControllers.login);
 router.get('/', verifyToken, adminControllers.keeplogin);
 router.put('/', adminControllers.forgetPassword);
 router.patch('/', verifyToken, adminControllers.resetPassword);

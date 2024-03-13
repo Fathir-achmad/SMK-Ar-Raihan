@@ -24,12 +24,12 @@ app.use(express.static("../src/public"));
 // ===========================
 // NOTE : Add your routes here
 
-const { adminRouters, ajaranRouters, kelasRouters, studentRouters, posBayarRouters, jurnalUmumRouters } = require('./routers');
+const { adminRouters, ajaranRouters, kelasRouters, siswaRouters, posBayarRouters, jurnalUmumRouters } = require('./routers');
 
 app.use('/api/auth', adminRouters);
 app.use('/api/ajaran', ajaranRouters);
 app.use('/api/kelas', kelasRouters);
-app.use("/api/student",studentRouters);
+app.use("/api/student",siswaRouters);
 app.use('/api/posbayar', posBayarRouters);
 app.use('/api/jurnalumum', jurnalUmumRouters);
 
@@ -83,7 +83,7 @@ app.listen(PORT, (err) => {
   if (err) {
     console.log(`ERROR: ${err}`);
   } else {
-    db.sequelize.sync({ alter: true });
+    // db.sequelize.sync({ alter: true });
     console.log(`APP RUNNING at ${PORT} ✅`);
   }
 });

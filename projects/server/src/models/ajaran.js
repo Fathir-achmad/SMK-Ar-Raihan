@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Ajaran.hasOne(models.Jenis_bayar)
     }
   }
   Ajaran.init({
